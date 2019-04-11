@@ -64,11 +64,11 @@ public class QueryProcessorTest {
         String actualQuery = "999bd690: which of the following numbers is both a square and a cube: 729, 34, 503, 1000000";
         assertThat(queryProcessor.process(actualQuery), containsString("729"));
     }
-
-    @Test
-    public void primeNumber() throws Exception {
-        String actualQuery = "de873070: which of the following numbers are primes: 733, 41, 718, 29";
-        assertThat(queryProcessor.process(actualQuery), containsString("29"));
-    }
+//
+//    @Test
+//    public void primeNumber() throws Exception {
+//        String actualQuery = "de873070: which of the following numbers are primes: 733, 41, 718, 29";
+//        assertThat(queryProcessor.process(actualQuery), containsString("29"));
+//    }
 
 }

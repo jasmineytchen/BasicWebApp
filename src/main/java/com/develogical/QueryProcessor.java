@@ -18,8 +18,13 @@ public class QueryProcessor {
 					"English poet, playwright, and actor, widely regarded as the greatest " +
 					"writer in the English language and the world's pre-eminent dramatist.";
 		}
+
 		if (query.toLowerCase().contains("name")) {
 			return "mexico-bandido";
+		}
+
+		if (query.toLowerCase().contains("eiffel")) {
+			return "Paris";
 		}
 
 		if (query.toLowerCase().contains("plus")) {
@@ -34,6 +39,7 @@ public class QueryProcessor {
 			return String.valueOf(Collections.max(listOfNumbers));
 //			return String.valueOf(listOfNumbers.stream().mapToInt(Integer::intValue).max());
 		}
+
 		if (query.toLowerCase().contains("multiplied")) {
 			String[] pieces = query.replace(",", " ").split(" ");
 			List<Integer> listOfNumbers = extractNumbersFromQuery(pieces);
@@ -50,6 +56,7 @@ public class QueryProcessor {
 				}
 			}
 		}
+
 		return "";
 	}
 

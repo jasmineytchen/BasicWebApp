@@ -26,6 +26,13 @@ public class QueryProcessorTest {
     }
 
     @Test
+    public void knowsAboutEiffel() throws Exception {
+        String actualQuery = "44385080: which city is the Eiffel tower in";
+        assertThat(queryProcessor.process(actualQuery), containsString("Paris"));
+    }
+
+
+    @Test
     public void isNotCaseSensitive() throws Exception {
         assertThat(queryProcessor.process("shakespeare"), containsString("playwright"));
     }

@@ -35,6 +35,11 @@ public class QueryProcessorTest {
         String actualQuery = "39a6cd50: what is 9 plus 11";
         assertThat(queryProcessor.process(actualQuery), containsString("20"));
     }
+    @Test
+    public void multiplyNumber() throws Exception {
+        String actualQuery = "16b2d5d0: what is 10 multiplied by 5";
+        assertThat(queryProcessor.process(actualQuery), containsString("50"));
+    }
 
     @Test
     public void largestNumber() throws Exception {

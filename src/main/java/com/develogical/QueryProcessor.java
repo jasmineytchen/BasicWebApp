@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static com.sun.org.apache.xalan.internal.xsltc.compiler.util.Type.Int;
+import static jdk.nashorn.internal.objects.NativeMath.max;
 
 public class QueryProcessor {
 
@@ -28,9 +29,13 @@ public class QueryProcessor {
 
 		if (query.toLowerCase().contains("largest")) {
 			String[] pieces = query.replace(",", " ").split(" ");
-
 			List<Integer> listOfNumbers = extractNumbersFromQuery(pieces);
-			return String.valueOf(listOfNumbers.stream().mapToInt(Integer::intValue).max().getAsInt());
+			return String.valueOf(max(listOfNumbers));
+		}
+		if (query.toLowerCase().contains("multiplied")) {
+			String[] pieces = query.replace(",", " ").split(" ");
+			List<Integer> listOfNumbers = extractNumbersFromQuery(pieces);
+			return String.valueOf(listOfNumbers.get(0) * listOfNumbers.get(1));
 		}
 		return "";
 	}

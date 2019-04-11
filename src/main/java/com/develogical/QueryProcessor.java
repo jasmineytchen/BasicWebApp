@@ -27,9 +27,10 @@ public class QueryProcessor {
 		}
 
 		if (query.toLowerCase().contains("largest")) {
-			String[] pieces = query.split(" ");
+			String[] pieces = query.replace(",", " ").split(" ");
+
 			List<Integer> listOfNumbers = extractNumbersFromQuery(pieces);
-			return String.valueOf(listOfNumbers.stream().mapToInt(Integer::intValue).max());
+			return String.valueOf(listOfNumbers.stream().mapToInt(Integer::intValue).max().getAsInt());
 		}
 		return "";
 	}

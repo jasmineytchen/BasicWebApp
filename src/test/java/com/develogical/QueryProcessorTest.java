@@ -35,4 +35,10 @@ public class QueryProcessorTest {
         String actualQuery = "39a6cd50: what is 9 plus 11";
         assertThat(queryProcessor.process(actualQuery), containsString("20"));
     }
+
+    @Test
+    public void largestNumber() throws Exception {
+        String actualQuery = "04d10d80: which of the following numbers is the largest: 98, 684, 927, 83";
+        assertThat(queryProcessor.process(actualQuery), containsString("927"));
+    }
 }

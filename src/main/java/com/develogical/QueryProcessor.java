@@ -27,6 +27,10 @@ public class QueryProcessor {
 			return "Paris";
 		}
 
+		if (query.toLowerCase().contains("banana")) {
+			return "yellow";
+		}
+
 		if (query.toLowerCase().contains("plus")) {
 			String[] pieces = query.split(" ");
 			List<Integer> listOfNumbers = extractNumbersFromQuery(pieces);

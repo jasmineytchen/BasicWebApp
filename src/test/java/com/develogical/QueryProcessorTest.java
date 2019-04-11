@@ -29,4 +29,10 @@ public class QueryProcessorTest {
     public void isNotCaseSensitive() throws Exception {
         assertThat(queryProcessor.process("shakespeare"), containsString("playwright"));
     }
+
+    @Test
+    public void plusNumber() throws Exception {
+        String actualQuery = "39a6cd50: what is 9 plus 11";
+        assertThat(queryProcessor.process(actualQuery), containsString("20"));
+    }
 }

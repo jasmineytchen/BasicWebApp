@@ -47,11 +47,11 @@ public class QueryProcessorTest {
         assertThat(queryProcessor.process(actualQuery), containsString("927"));
     }
 
-    @Test
-    public void squreAndCubeNumber() throws Exception {
-        String actualQuery = "999bd690: which of the following numbers is both a square and a cube: 729, 34, 503, 1000000";
-        assertThat(queryProcessor.process(actualQuery), containsString("1000000"));
-    }
+//    @Test
+//    public void squreAndCubeNumber() throws Exception {
+//        String actualQuery = "999bd690: which of the following numbers is both a square and a cube: 729, 34, 503, 1000000";
+//        assertThat(queryProcessor.process(actualQuery), containsString("1000000"));
+//    }
 
 
 }

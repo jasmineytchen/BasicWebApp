@@ -37,6 +37,19 @@ public class QueryProcessor {
 			List<Integer> listOfNumbers = extractNumbersFromQuery(pieces);
 			return String.valueOf(listOfNumbers.get(0) * listOfNumbers.get(1));
 		}
+//
+//		if (query.toLowerCase().contains("square")) {
+//			String[] pieces = query.replace(",", " ").split(" ");
+//			List<Integer> listOfNumbers = extractNumbersFromQuery(pieces);
+//
+//			for(number: listOfNumbers){
+//
+//			}
+//			return String.valueOf(listOfNumbers.get(0) * listOfNumbers.get(1));
+//		}
+
+
+		if
 		return "";
 	}
 

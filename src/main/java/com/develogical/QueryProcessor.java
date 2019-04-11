@@ -1,5 +1,10 @@
 package com.develogical;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import static com.sun.org.apache.xalan.internal.xsltc.compiler.util.Type.Int;
+
 public class QueryProcessor {
 
     public String process(String query) {
@@ -15,6 +20,17 @@ public class QueryProcessor {
             return "mexico-bandido";
         }
 
+        if (query.toLowerCase().contains("plus")) {
+            String[] pieces = query.split(" ");
+            List<Integer> numbers = new ArrayList();
+            for (String piece : pieces){
+                Integer parsedPiece = Integer.parseInt(piece);
+                if (parsedPiece != null) {
+                    numbers.add(parsedPiece);
+                }
+            }
+            return String.valueOf(numbers.stream().mapToInt(Integer::intValue).sum());
+        }
 
         if (query.toLowerCase().contains("largest")) {
             System.out.println(query.split(":",2));

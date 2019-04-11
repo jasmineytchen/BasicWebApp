@@ -68,9 +68,12 @@ public class QueryProcessor {
 		if (query.toLowerCase().contains("prime")) {
 			String[] pieces = query.replace(",", " ").split(" ");
 			List<Integer> listOfNumbers = extractNumbersFromQuery(pieces);
-			Set<Integer> numberSet = new HashSet<Integer>(listOfNumbers);
-			numberSet.retainAll(primeNumberSet);
 
+			for(Integer number: listOfNumbers){
+				if (listOfPrimeNumber.contains(number)){
+					return String.valueOf(number);
+				}
+			}
 		}
 
 

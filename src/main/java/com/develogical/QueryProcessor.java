@@ -1,6 +1,7 @@
 package com.develogical;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import static com.sun.org.apache.xalan.internal.xsltc.compiler.util.Type.Int;
@@ -30,7 +31,8 @@ public class QueryProcessor {
 		if (query.toLowerCase().contains("largest")) {
 			String[] pieces = query.replace(",", " ").split(" ");
 			List<Integer> listOfNumbers = extractNumbersFromQuery(pieces);
-			return String.valueOf(listOfNumbers.stream().mapToInt(Integer::intValue).max());
+			return String.valueOf(Collections.max(listOfNumbers));
+//			return String.valueOf(listOfNumbers.stream().mapToInt(Integer::intValue).max());
 		}
 		if (query.toLowerCase().contains("multiplied")) {
 			String[] pieces = query.replace(",", " ").split(" ");

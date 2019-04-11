@@ -46,4 +46,12 @@ public class QueryProcessorTest {
         String actualQuery = "04d10d80: which of the following numbers is the largest: 98, 684, 927, 83";
         assertThat(queryProcessor.process(actualQuery), containsString("927"));
     }
+
+    @Test
+    public void squreAndCubeNumber() throws Exception {
+        String actualQuery = "999bd690: which of the following numbers is both a square and a cube: 729, 34, 503, 1000000";
+        assertThat(queryProcessor.process(actualQuery), containsString("1000000"));
+    }
+
+
 }

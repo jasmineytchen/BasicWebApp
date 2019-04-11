@@ -30,7 +30,7 @@ public class QueryProcessor {
 		if (query.toLowerCase().contains("largest")) {
 			String[] pieces = query.replace(",", " ").split(" ");
 			List<Integer> listOfNumbers = extractNumbersFromQuery(pieces);
-			return String.valueOf(max(listOfNumbers));
+			return String.valueOf(listOfNumbers.stream().mapToInt(Integer::intValue).max());
 		}
 		if (query.toLowerCase().contains("multiplied")) {
 			String[] pieces = query.replace(",", " ").split(" ");

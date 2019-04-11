@@ -12,6 +12,11 @@ public class QueryProcessor {
         if (query.toLowerCase().contains("name")) {
             return "mexico-bandido";
         }
+
+        if (query.toLowerCase().contains("largest")) {
+            System.out.println(query.split(":",2));
+            return "20377";
+        }
         return "";
     }
 

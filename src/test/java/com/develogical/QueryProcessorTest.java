@@ -67,8 +67,8 @@ public class QueryProcessorTest {
 
     @Test
     public void primeNumber() throws Exception {
-        String actualQuery = "de873070: which of the following numbers are primes: 29, 41, 718, 733";
-        assertThat(queryProcessor.process(actualQuery), containsString("29"));
+        String actualQuery = "de873070: which of the following numbers are primes: 58, 41, 123, 718, 733";
+        assertThat(queryProcessor.process(actualQuery), containsString("41"));
     }
 
 }

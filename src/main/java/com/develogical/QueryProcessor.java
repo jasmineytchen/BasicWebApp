@@ -33,6 +33,12 @@ public class QueryProcessor {
 			return "Sean Connery";
 		}
 
+		if (query.toLowerCase().contains("May")) {
+			return "2016";
+		}
+
+
+
 		if (query.toLowerCase().contains("plus")) {
 			String[] pieces = query.split(" ");
 			List<Integer> listOfNumbers = extractNumbersFromQuery(pieces);
@@ -68,13 +74,25 @@ public class QueryProcessor {
 		if (query.toLowerCase().contains("prime")) {
 			String[] pieces = query.replace(",", " ").split(" ");
 			List<Integer> listOfNumbers = extractNumbersFromQuery(pieces);
-
 			for(Integer number: listOfNumbers){
 				if (listOfPrimeNumber.contains(number)){
 					return String.valueOf(number);
 				}
 			}
 		}
+//
+//		if (query.toLowerCase().contains("fibonacci")) {
+//			String[] pieces = query.replace(",", " ").split(" ");
+//
+//			List<Integer> listOfNumbers = extractNumbersFromQuery(pieces);
+//			for(Integer number: listOfNumbers){
+//				if (listOfPrimeNumber.contains(number)){
+//					return String.valueOf(number);
+//				}
+//			}
+//		}
+
+
 
 
 		return "";

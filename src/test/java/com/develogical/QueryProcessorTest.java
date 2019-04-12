@@ -62,13 +62,13 @@ public class QueryProcessorTest {
     @Test
     public void squreAndCubeNumber() throws Exception {
         String actualQuery = "999bd690: which of the following numbers is both a square and a cube: 729, 34, 503, 1000000";
-        assertThat(queryProcessor.process(actualQuery), containsString("729"));
+        assertThat(queryProcessor.process(actualQuery), containsString("1000000"));
     }
 
     @Test
     public void primeNumber() throws Exception {
         String actualQuery = "de873070: which of the following numbers are primes: 58, 41, 123, 718, 733";
-        assertThat(queryProcessor.process(actualQuery), containsString("41"));
+        assertThat(queryProcessor.process(actualQuery), containsString("733"));
     }
 
 }
